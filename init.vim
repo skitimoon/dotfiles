@@ -90,5 +90,3 @@ nnoremap <M-k> <Plug>(devdocs-under-cursor)
 " Add plugins to &runtimepath
 call plug#end()
 
-colorscheme base16-default-dark
-
