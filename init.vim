@@ -10,6 +10,8 @@ set list
 set termguicolors
 set ignorecase
 set smartcase
+set background=dark
+set mouse=a
 " set clipboard+=unnamedplus
 " set wildmode=longest:full,full
 
@@ -30,8 +32,8 @@ nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
 nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
 nnoremap <silent> <C-\> :TmuxNavigatePrevious<cr>noremap <CR> o<ESC>
 
-nnoremap <C-e> 2<C-E>
-nnoremap <C-y> 2<C-Y>
+nnoremap <C-e> 4<C-E>
+nnoremap <C-y> 4<C-Y>
 nnoremap Y y$
 nnoremap j gj
 nnoremap k gk
@@ -48,7 +50,7 @@ cnoremap <M-f> <S-Right>
 cnoremap <C-n>  <down>
 cnoremap <C-p>  <up>
 
-call plug#begin('~/.config/.nvim/plugged')
+call plug#begin()
 
 Plug 'christoomey/vim-tmux-navigator' "https://github.com/christoomey/vim-tmux-navigator
 Plug 'mhinz/vim-startify' "https://github.com/mhinz/vim-startify
@@ -73,7 +75,7 @@ Plug 'haya14busa/is.vim' " https://github.com/haya14busa/is.vim
 Plug 'vim-airline/vim-airline' " https://github.com/vim-airline/vim-airline
 Plug 'vim-airline/vim-airline-themes' " https://github.com/vim-airline/vim-airline-themes
 let g:airline#extensions#tabline#enabled = 1
-" let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 1
 " let g:airline#extensions#tabline#left_sep = ' '
 " let g:airline#extensions#tabline#left_alt_sep = '|'
 Plug 'w0rp/ale' " https://github.com/w0rp/ale
@@ -89,4 +91,6 @@ nnoremap <M-k> <Plug>(devdocs-under-cursor)
 
 " Add plugins to &runtimepath
 call plug#end()
+
+colorscheme base16-default-dark
 
