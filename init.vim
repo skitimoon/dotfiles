@@ -62,6 +62,9 @@ let g:deoplete#enable_at_startup = 1
 Plug 'tpope/vim-commentary' " https://github.com/tpope/vim-commentary
 Plug 'zchee/deoplete-jedi' " https://github.com/zchee/deoplete-jedi
 Plug 'SirVer/ultisnips' " https://github.com/SirVer/ultisnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 Plug 'honza/vim-snippets' " https://github.com/honza/vim-snippets
 " Plug 'Shougo/neosnippet.vim' " https://github.com/Shougo/neosnippet.vim
 " Plug 'Shougo/neosnippet-snippets' " https://github.com/Shougo/neosnippet-snippets
