@@ -61,14 +61,16 @@ let g:deoplete#enable_at_startup = 1
 " Plug 'tomtom/tcomment_vim' " https://github.com/tomtom/tcomment_vim
 Plug 'tpope/vim-commentary' " https://github.com/tpope/vim-commentary
 Plug 'zchee/deoplete-jedi' " https://github.com/zchee/deoplete-jedi
-Plug 'Shougo/neosnippet.vim' " https://github.com/Shougo/neosnippet.vim
-Plug 'Shougo/neosnippet-snippets' " https://github.com/Shougo/neosnippet-snippets
+Plug 'SirVer/ultisnips' " https://github.com/SirVer/ultisnips
+Plug 'honza/vim-snippets' " https://github.com/honza/vim-snippets
+" Plug 'Shougo/neosnippet.vim' " https://github.com/Shougo/neosnippet.vim
+" Plug 'Shougo/neosnippet-snippets' " https://github.com/Shougo/neosnippet-snippets
 Plug 'tpope/vim-repeat' " https://github.com/tpope/vim-repeat
 Plug 'tpope/vim-surround' " https://github.com/tpope/vim-surround
 Plug 'tpope/vim-unimpaired' " https://github.com/tpope/vim-unimpaired
 Plug 'justinmk/vim-sneak' " https://github.com/justinmk/vim-sneak
 Plug 'jiangmiao/auto-pairs' " https://github.com/jiangmiao/auto-pairs
-let g:AutoPairsFlyMode = 1
+" let g:AutoPairsFlyMode = 1
 Plug 'wellle/targets.vim' " https://github.com/wellle/targets.vim
 Plug 'haya14busa/is.vim' " https://github.com/haya14busa/is.vim
 " Plug 'cohama/lexima.vim' " https://github.com/cohama/lexima.vim
