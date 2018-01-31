@@ -58,9 +58,6 @@ Plug 'mhinz/vim-startify' "https://github.com/mhinz/vim-startify
 Plug 'Shougo/denite.nvim' " https://github.com/Shougo/denite.nvim
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " https://github.com/Shougo/deoplete.nvim
 let g:deoplete#enable_at_startup = 1
-" Plug 'scrooloose/nerdcommenter' " https://github.com/scrooloose/nerdcommenter
-" Plug 'tomtom/tcomment_vim' " https://github.com/tomtom/tcomment_vim
-Plug 'tpope/vim-commentary' " https://github.com/tpope/vim-commentary
 Plug 'zchee/deoplete-jedi' " https://github.com/zchee/deoplete-jedi
 Plug 'SirVer/ultisnips' " https://github.com/SirVer/ultisnips
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -69,15 +66,19 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 Plug 'honza/vim-snippets' " https://github.com/honza/vim-snippets
 " Plug 'Shougo/neosnippet.vim' " https://github.com/Shougo/neosnippet.vim
 " Plug 'Shougo/neosnippet-snippets' " https://github.com/Shougo/neosnippet-snippets
+" Plug 'scrooloose/nerdcommenter' " https://github.com/scrooloose/nerdcommenter
+" Plug 'tomtom/tcomment_vim' " https://github.com/tomtom/tcomment_vim
+Plug 'tpope/vim-commentary' " https://github.com/tpope/vim-commentary
 Plug 'tpope/vim-repeat' " https://github.com/tpope/vim-repeat
 Plug 'tpope/vim-surround' " https://github.com/tpope/vim-surround
 Plug 'tpope/vim-unimpaired' " https://github.com/tpope/vim-unimpaired
-Plug 'justinmk/vim-sneak' " https://github.com/justinmk/vim-sneak
-Plug 'jiangmiao/auto-pairs' " https://github.com/jiangmiao/auto-pairs
+Plug 'tpope/tpope/vim-obsession' " https://github.com/tpope/vim-obsession
+" Plug 'justinmk/vim-sneak' " https://github.com/justinmk/vim-sneak
+" Plug 'jiangmiao/auto-pairs' " https://github.com/jiangmiao/auto-pairs
 " let g:AutoPairsFlyMode = 1
 Plug 'wellle/targets.vim' " https://github.com/wellle/targets.vim
 Plug 'haya14busa/is.vim' " https://github.com/haya14busa/is.vim
-" Plug 'cohama/lexima.vim' " https://github.com/cohama/lexima.vim
+Plug 'cohama/lexima.vim' " https://github.com/cohama/lexima.vim
 Plug 'vim-airline/vim-airline' " https://github.com/vim-airline/vim-airline
 Plug 'vim-airline/vim-airline-themes' " https://github.com/vim-airline/vim-airline-themes
 let g:airline#extensions#tabline#enabled = 1
