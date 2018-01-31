@@ -38,9 +38,10 @@ nnoremap Y y$
 nnoremap j gj
 nnoremap k gk
 nnoremap x "_x
+autocmd FileType help noremap <buffer> q :helpclose<cr>
 " nnoremap [<space>  :<c-u>put! =repeat(nr2char(10), v:count1)<cr>'[
 " nnoremap ]<space>  :<c-u>put =repeat(nr2char(10), v:count1)<cr>
-nnoremap <leader>l :nohlsearch<CR>
+" nnoremap <leader>l :nohlsearch<CR>
 
 cnoremap <C-a> <Home>
 cnoremap <C-b> <Left>
@@ -84,6 +85,10 @@ let g:airline_powerline_fonts = 1
 " let g:airline#extensions#tabline#left_sep = ' '
 " let g:airline#extensions#tabline#left_alt_sep = '|'
 Plug 'w0rp/ale' " https://github.com/w0rp/ale
+let g:ale_fix_on_save = 1
+let g:ale_fixers = {
+\   'javascript': ['prettier-eslint']
+\}
 " Plug 'neomake/neomake' " https://github.com/neomake/neomake
 " autocmd! BufWritePost * Neomake
 " Plug 'bfredl/nvim-ipy' " https://github.com/bfredl/nvim-ipy
