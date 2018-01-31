@@ -25,13 +25,6 @@ set splitright             " Open new windows right of the current window.
 
 let g:netrw_liststyle=3
 
-let g:tmux_navigator_no_mappings = 1
-nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
-nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
-nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
-nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
-nnoremap <silent> <C-\> :TmuxNavigatePrevious<cr>noremap <CR> o<ESC>
-
 nnoremap <C-e> 4<C-E>
 nnoremap <C-y> 4<C-Y>
 nnoremap Y y$
@@ -56,6 +49,8 @@ call plug#begin()
 Plug 'christoomey/vim-tmux-navigator' "https://github.com/christoomey/vim-tmux-navigator
 Plug 'mhinz/vim-startify' "https://github.com/mhinz/vim-startify
 Plug 'Shougo/denite.nvim' " https://github.com/Shougo/denite.nvim
+noremap <C-p> :Denite file_rec buffer<cr>
+
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " https://github.com/Shougo/deoplete.nvim
 let g:deoplete#enable_at_startup = 1
 Plug 'zchee/deoplete-jedi' " https://github.com/zchee/deoplete-jedi
@@ -102,6 +97,16 @@ nnoremap <M-k> <Plug>(devdocs-under-cursor)
 
 " Add plugins to &runtimepath
 call plug#end()
+
+call denite#custom#map('insert', '<C-j>', '<denite:move_to_next_line>', 'noremap')
+call denite#custom#map('insert', '<C-k>', '<denite:move_to_previous_line>', 'noremap')
+
+let g:tmux_navigator_no_mappings = 1
+nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
+nnoremap <silent> <C-\> :TmuxNavigatePrevious<cr>noremap <CR> o<ESC>
 
 colorscheme base16-default-dark
 
