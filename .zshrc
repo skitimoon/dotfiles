@@ -103,6 +103,11 @@ zplug "plugins/tmux", from:oh-my-zsh
 zplug "plugins/yarn", from:oh-my-zsh
 zplug "rupa/z"
 . ~/.zplug/repos/rupa/z/z.sh
+unalias z 2> /dev/null
+z() {
+    [ $# -gt 0 ] && _z "$*" && return
+    cd "$(_z -l 2>&1 | fzf --height 40% --nth 2.. --reverse --inline-info +s --tac --query "${*##-* }" | sed 's/^[0-9,.]* *//')"
+}
 
 zplug mafredri/zsh-async, from:github
 zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
