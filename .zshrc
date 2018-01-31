@@ -75,7 +75,7 @@ source /usr/share/fzf/completion.zsh
 # added by Anaconda3 installer
 export PATH="/home/archer/anaconda3/bin:$PATH"
 export PATH="/home/archer/.config/yarn/global/bin:$PATH"
-export LESS=Rj.5
+export LESS=iRj.5
 # export ZSH_TMUX_AUTOSTART=true
 
 # Preferred editor for local and remote sessions
