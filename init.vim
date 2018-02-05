@@ -50,6 +50,8 @@ Plug 'christoomey/vim-tmux-navigator' "https://github.com/christoomey/vim-tmux-n
 Plug 'mhinz/vim-startify' "https://github.com/mhinz/vim-startify
 Plug 'Shougo/denite.nvim' " https://github.com/Shougo/denite.nvim
 noremap <C-p> :Denite file_rec buffer<cr>
+noremap <leader>f :Denite file<cr>
+noremap <leader>b :Denite buffer<cr>
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " https://github.com/Shougo/deoplete.nvim
 let g:deoplete#enable_at_startup = 1
@@ -67,7 +69,7 @@ Plug 'tpope/vim-commentary' " https://github.com/tpope/vim-commentary
 Plug 'tpope/vim-repeat' " https://github.com/tpope/vim-repeat
 Plug 'tpope/vim-surround' " https://github.com/tpope/vim-surround
 Plug 'tpope/vim-unimpaired' " https://github.com/tpope/vim-unimpaired
-Plug 'tpope/tpope/vim-obsession' " https://github.com/tpope/vim-obsession
+Plug 'tpope/vim-obsession' " https://github.com/tpope/vim-obsession
 " Plug 'justinmk/vim-sneak' " https://github.com/justinmk/vim-sneak
 " Plug 'jiangmiao/auto-pairs' " https://github.com/jiangmiao/auto-pairs
 " let g:AutoPairsFlyMode = 1
@@ -97,9 +99,6 @@ nnoremap <M-k> <Plug>(devdocs-under-cursor)
 
 " Add plugins to &runtimepath
 call plug#end()
-
-call denite#custom#map('insert', '<C-j>', '<denite:move_to_next_line>', 'noremap')
-call denite#custom#map('insert', '<C-k>', '<denite:move_to_previous_line>', 'noremap')
 
 let g:tmux_navigator_no_mappings = 1
 nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
