@@ -96,6 +96,7 @@ Plug 'chriskempson/base16-vim' " https://github.com/chriskempson/base16-vim
 Plug 'Yggdroot/indentLine' " https://github.com/Yggdroot/indentLine
 Plug 'rhysd/devdocs.vim' " https://github.com/rhysd/devdocs.vim
 nnoremap <M-k> <Plug>(devdocs-under-cursor)
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " https://github.com/junegunn/fzf
 
 " Add plugins to &runtimepath
 call plug#end()

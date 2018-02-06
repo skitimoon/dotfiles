@@ -74,6 +74,8 @@ source /usr/share/fzf/completion.zsh
 
 # added by Anaconda3 installer
 export PATH="$HOME/anaconda3/bin:$PATH"
+# added by Miniconda3 installer
+export PATH="$HOME/miniconda3/bin:$PATH"
 export PATH="$HOME/.config/yarn/global/bin:$PATH"
 export LESS=iRj.5
 # export ZSH_TMUX_AUTOSTART=true
@@ -130,3 +132,5 @@ zplug load
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
