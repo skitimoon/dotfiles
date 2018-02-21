@@ -23,8 +23,10 @@ set shiftround              " >> indents to next multiple of 'shiftwidth'.
 set splitbelow             " Open new windows below the current window.
 set splitright             " Open new windows right of the current window.
 
+let g:tex_flavor = 'latex'
 let g:netrw_liststyle=3
 
+map <Space> <leader>
 nnoremap <C-e> 4<C-E>
 nnoremap <C-y> 4<C-Y>
 nnoremap Y y$
@@ -47,19 +49,21 @@ cnoremap <C-p>  <up>
 call plug#begin()
 
 Plug 'christoomey/vim-tmux-navigator' "https://github.com/christoomey/vim-tmux-navigator
+let g:tmux_navigator_no_mappings = 1
+Plug 'ludovicchabant/vim-gutentags' "https://github.com/ludovicchabant/vim-gutentags
+Plug 'majutsushi/tagbar' "https://github.com/majutsushi/tagbar
 Plug 'mhinz/vim-startify' "https://github.com/mhinz/vim-startify
 Plug 'Shougo/denite.nvim' " https://github.com/Shougo/denite.nvim
 noremap <C-p> :Denite file_rec buffer<cr>
-noremap <leader>f :Denite file<cr>
-noremap <leader>b :Denite buffer<cr>
+noremap <leader>df :Denite file<cr>
+noremap <leader>db :Denite buffer<cr>
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " https://github.com/Shougo/deoplete.nvim
 let g:deoplete#enable_at_startup = 1
 Plug 'zchee/deoplete-jedi' " https://github.com/zchee/deoplete-jedi
 Plug 'SirVer/ultisnips' " https://github.com/SirVer/ultisnips
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+" let g:UltiSnipsJumpForwardTrigger="<c-b>"
+" let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 Plug 'honza/vim-snippets' " https://github.com/honza/vim-snippets
 " Plug 'Shougo/neosnippet.vim' " https://github.com/Shougo/neosnippet.vim
 " Plug 'Shougo/neosnippet-snippets' " https://github.com/Shougo/neosnippet-snippets
@@ -70,6 +74,7 @@ Plug 'tpope/vim-repeat' " https://github.com/tpope/vim-repeat
 Plug 'tpope/vim-surround' " https://github.com/tpope/vim-surround
 Plug 'tpope/vim-unimpaired' " https://github.com/tpope/vim-unimpaired
 Plug 'tpope/vim-obsession' " https://github.com/tpope/vim-obsession
+Plug 'tpope/vim-fugitive' " https://github.com/tpope/vim-fugitive
 " Plug 'justinmk/vim-sneak' " https://github.com/justinmk/vim-sneak
 " Plug 'jiangmiao/auto-pairs' " https://github.com/jiangmiao/auto-pairs
 " let g:AutoPairsFlyMode = 1
@@ -92,6 +97,8 @@ let g:ale_fixers = {
 " Plug 'bfredl/nvim-ipy' " https://github.com/bfredl/nvim-ipy
 Plug 'airblade/vim-gitgutter' " https://github.com/airblade/vim-gitgutter
 Plug 'lervag/vimtex' " https://github.com/lervag/vimtex
+let g:vimtex_view_method='skim'
+let g:vimtex_compiler_progname='nvr'
 Plug 'chriskempson/base16-vim' " https://github.com/chriskempson/base16-vim
 Plug 'Yggdroot/indentLine' " https://github.com/Yggdroot/indentLine
 Plug 'rhysd/devdocs.vim' " https://github.com/rhysd/devdocs.vim
@@ -101,7 +108,6 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " https://gith
 " Add plugins to &runtimepath
 call plug#end()
 
-let g:tmux_navigator_no_mappings = 1
 nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
 nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
 nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
