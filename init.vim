@@ -54,10 +54,15 @@ Plug 'ludovicchabant/vim-gutentags' "https://github.com/ludovicchabant/vim-guten
 Plug 'majutsushi/tagbar' "https://github.com/majutsushi/tagbar
 Plug 'mhinz/vim-startify' "https://github.com/mhinz/vim-startify
 Plug 'Shougo/denite.nvim' " https://github.com/Shougo/denite.nvim
-noremap <C-p> :Denite file_rec buffer<cr>
+noremap <C-p> :Denite file_rec<cr>
 noremap <leader>df :Denite file<cr>
 noremap <leader>db :Denite buffer<cr>
+noremap <leader>dg :Denite grep<cr>
 
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " https://github.com/Shougo/deoplete.nvim
 let g:deoplete#enable_at_startup = 1
 Plug 'zchee/deoplete-jedi' " https://github.com/zchee/deoplete-jedi
