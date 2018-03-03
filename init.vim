@@ -52,6 +52,7 @@ Plug 'christoomey/vim-tmux-navigator' "https://github.com/christoomey/vim-tmux-n
 let g:tmux_navigator_no_mappings = 1
 Plug 'ludovicchabant/vim-gutentags' "https://github.com/ludovicchabant/vim-gutentags
 Plug 'majutsushi/tagbar' "https://github.com/majutsushi/tagbar
+nnoremap <leader>tb :TagbarToggle<CR>
 Plug 'mhinz/vim-startify' "https://github.com/mhinz/vim-startify
 Plug 'Shougo/denite.nvim' " https://github.com/Shougo/denite.nvim
 noremap <C-p> :Denite file_rec<cr>
@@ -63,7 +64,7 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
     \ }
-nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
+nnoremap <silent> <leader>K :call LanguageClient_textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
 nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " https://github.com/Shougo/deoplete.nvim
