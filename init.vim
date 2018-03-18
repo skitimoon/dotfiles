@@ -10,6 +10,7 @@ set list
 set termguicolors
 set ignorecase
 set smartcase
+set inccommand=split
 set background=dark
 set mouse=a
 " set clipboard+=unnamedplus
@@ -36,7 +37,7 @@ nnoremap x "_x
 autocmd FileType help noremap <buffer> q :helpclose<cr>
 " nnoremap [<space>  :<c-u>put! =repeat(nr2char(10), v:count1)<cr>'[
 " nnoremap ]<space>  :<c-u>put =repeat(nr2char(10), v:count1)<cr>
-" nnoremap <leader>l :nohlsearch<CR>
+nnoremap <leader>/ :nohlsearch<CR>
 
 cnoremap <C-a> <Home>
 cnoremap <C-b> <Left>
