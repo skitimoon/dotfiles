@@ -95,6 +95,7 @@ source ~/.zplug/init.zsh
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "zsh-users/vi-mode"
 zplug "plugins/common-aliases",   from:oh-my-zsh
 zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/sudo", from:oh-my-zsh

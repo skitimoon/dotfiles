@@ -36,9 +36,9 @@ nnoremap <C-y> 4<C-Y>
 nnoremap Y y$
 nnoremap j gj
 nnoremap k gk
-nnoremap x "_x
+" nnoremap x "_x
 autocmd FileType help noremap <buffer> q :helpclose<cr>
-autocmd FileType qf noremap <buffer> q :close<cr>
+autocmd FileType qf,diff noremap <buffer> q :close<cr>
 " nnoremap [<space>  :<c-u>put! =repeat(nr2char(10), v:count1)<cr>'[
 " nnoremap ]<space>  :<c-u>put =repeat(nr2char(10), v:count1)<cr>
 nnoremap <leader>/ :nohlsearch<CR>
@@ -94,6 +94,7 @@ nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
 nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " https://github.com/Shougo/deoplete.nvim
 let g:deoplete#enable_at_startup = 1
+Plug 'tmux-plugins/vim-tmux-focus-events' " https://github.com/tmux-plugins/vim-tmux-focus-events
 Plug 'zchee/deoplete-jedi' " https://github.com/zchee/deoplete-jedi
 Plug 'SirVer/ultisnips' " https://github.com/SirVer/ultisnips
 " let g:UltiSnipsJumpForwardTrigger="<c-b>"
