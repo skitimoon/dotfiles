@@ -65,6 +65,10 @@ map gz* <Plug>(asterisk-gz*)
 map z#  <Plug>(asterisk-z#)
 map gz# <Plug>(asterisk-gz#)
 
+" Plug 'LucHermitte/lh-vim-lib'
+" Plug 'LucHermitte/lh-brackets' " https://github.com/LucHermitte/lh-brackets
+" imap <C-J> <Plug>MarkersJumpF
+" imap <C-K> <Plug>MarkersJumpB
 Plug 'osyo-manga/vim-anzu' " https://github.com/osyo-manga/vim-anzu
 Plug 'pangloss/vim-javascript' " https://github.com/pangloss/vim-javascript
 Plug 'christoomey/vim-tmux-navigator' " https://github.com/christoomey/vim-tmux-navigator
@@ -119,6 +123,8 @@ Plug 'Raimondi/delimitMate' " https://github.com/Raimondi/delimitMate
 let delimitMate_expand_space = 1
 let delimitMate_expand_cr = 2
 let delimitMate_jump_expansion = 1
+let delimitMate_balance_matchpairs = 1
+autocmd FileType tex let b:delimitMate_quotes = "\" ' ` $"
 Plug 'wellle/targets.vim' " https://github.com/wellle/targets.vim
 let g:targets_argOpening = '[({[]'
 let g:targets_argClosing = '[]})]'
@@ -140,6 +146,7 @@ let g:ale_fixers = {
             \   'css': ['prettier', 'stylelint'],
             \   'python': ['yapf']
             \}
+nnoremap <leader>af :ALEFirst<CR>
 " Plug 'neomake/neomake' " https://github.com/neomake/neomake
 " autocmd! BufWritePost * Neomake
 " Plug 'bfredl/nvim-ipy' " https://github.com/bfredl/nvim-ipy
@@ -152,7 +159,7 @@ Plug 'chriskempson/base16-vim' " https://github.com/chriskempson/base16-vim
 Plug 'Yggdroot/indentLine' " https://github.com/Yggdroot/indentLine
 let g:indentLine_enabled=0
 Plug 'rhysd/devdocs.vim' " https://github.com/rhysd/devdocs.vim
-nnoremap <M-k> <Plug>(devdocs-under-cursor)
+nnoremap <ALT-k> <Plug>(devdocs-under-cursor)
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " https://github.com/junegunn/fzf
 
 " Add plugins to &runtimepath

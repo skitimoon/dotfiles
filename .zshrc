@@ -95,11 +95,11 @@ source ~/.zplug/init.zsh
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
-zplug "zsh-users/vi-mode"
 zplug "plugins/common-aliases",   from:oh-my-zsh
 zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/sudo", from:oh-my-zsh
 zplug "plugins/tmux", from:oh-my-zsh
+zplug "plugins/vi-mode", from:oh-my-zsh
 zplug "plugins/yarn", from:oh-my-zsh
 zplug "rupa/z"
 . ~/.zplug/repos/rupa/z/z.sh
