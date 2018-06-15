@@ -69,11 +69,7 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-# added by Anaconda3 installer
-export PATH="$HOME/anaconda3/bin:$PATH"
-# added by Miniconda3 installer
-export PATH="$HOME/miniconda3/bin:$PATH"
-export PATH="$HOME/.config/yarn/global/bin:$PATH"
+export PATH=/usr/local/anaconda3/bin:"$PATH"
 export LESS=iRj.5
 # export ZSH_TMUX_AUTOSTART=true
 
@@ -99,7 +95,7 @@ zplug "plugins/common-aliases",   from:oh-my-zsh
 zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/sudo", from:oh-my-zsh
 zplug "plugins/tmux", from:oh-my-zsh
-zplug "plugins/vi-mode", from:oh-my-zsh
+# zplug "plugins/vi-mode", from:oh-my-zsh
 zplug "plugins/yarn", from:oh-my-zsh
 zplug "rupa/z"
 . ~/.zplug/repos/rupa/z/z.sh
