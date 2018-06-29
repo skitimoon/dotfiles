@@ -107,6 +107,9 @@ Plug 'honza/vim-snippets' " https://github.com/honza/vim-snippets
 " Plug 'Shougo/neosnippet.vim' " https://github.com/Shougo/neosnippet.vim
 " Plug 'Shougo/neosnippet-snippets' " https://github.com/Shougo/neosnippet-snippets
 " Plug 'scrooloose/nerdcommenter' " https://github.com/scrooloose/nerdcommenter
+Plug 'skywind3000/asyncrun.vim' " https://github.com/skywind3000/asyncrun.vim
+let g:asyncrun_open = 8
+autocmd FileType python nnoremap <F5> :AsyncRun -raw python %<cr>
 " Plug 'tomtom/tcomment_vim' " https://github.com/tomtom/tcomment_vim
 Plug 'tpope/vim-commentary' " https://github.com/tpope/vim-commentary
 Plug 'tpope/vim-repeat' " https://github.com/tpope/vim-repeat
@@ -156,8 +159,9 @@ let g:vimtex_view_method='skim'
 let g:vimtex_compiler_progname='nvr'
 let g:vimtex_fold_enabled=1
 Plug 'chriskempson/base16-vim' " https://github.com/chriskempson/base16-vim
+Plug 'nathanaelkane/vim-indent-guides' " https://github.com/nathanaelkane/vim-indent-guides
 Plug 'Yggdroot/indentLine' " https://github.com/Yggdroot/indentLine
-let g:indentLine_enabled=0
+autocmd FileType tex let g:indentLine_enabled=0
 Plug 'rhysd/devdocs.vim' " https://github.com/rhysd/devdocs.vim
 nnoremap <ALT-k> <Plug>(devdocs-under-cursor)
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " https://github.com/junegunn/fzf
