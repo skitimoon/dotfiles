@@ -1,4 +1,3 @@
-
 set undofile                " keep an undo file (undo changes after closing)
 set relativenumber
 set number
@@ -27,6 +26,7 @@ set splitright             " Open new windows right of the current window.
 
 let g:tex_flavor = 'latex'
 let g:netrw_liststyle=3
+nnoremap <Space> <Nop>
 let mapleader = "\<Space>"
 let maplocalleader = "\<Space>"
 nnoremap \ <Space>
@@ -49,8 +49,8 @@ cnoremap <C-b> <Left>
 cnoremap <C-f> <Right>
 cnoremap <M-b> <S-Left>
 cnoremap <M-f> <S-Right>
-cnoremap <C-n>  <down>
-cnoremap <C-p>  <up>
+cnoremap <C-n> <down>
+cnoremap <C-p> <up>
 
 call plug#begin()
 
@@ -90,15 +90,23 @@ Plug 'autozimu/LanguageClient-neovim', {
             \ 'branch': 'next',
             \ 'do': 'bash install.sh',
             \ }
+set formatexpr=LanguageClient#textDocument_rangeFormatting_sync()
 let g:LanguageClient_serverCommands = {
+            \ 'python': ['pyls'],
             \ 'javascript': ['javascript-typescript-stdio'],
             \ }
+nnoremap <F5> :call LanguageClient_contextMenu()<CR>
 nnoremap <silent> <leader>K :call LanguageClient_textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
+nnoremap <leader>gd gd
+" nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
 nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " https://github.com/Shougo/deoplete.nvim
 let g:deoplete#enable_at_startup = 1
 Plug 'tmux-plugins/vim-tmux-focus-events' " https://github.com/tmux-plugins/vim-tmux-focus-events
+Plug 'davidhalter/jedi-vim' " https://github.com/davidhalter/jedi-vim
+let g:jedi#completions_enabled = 0
+let g:jedi#goto_command = 'gd'
+let g:jedi#use_splits_not_buffers = 'right'
 Plug 'zchee/deoplete-jedi' " https://github.com/zchee/deoplete-jedi
 Plug 'SirVer/ultisnips' " https://github.com/SirVer/ultisnips
 " let g:UltiSnipsJumpForwardTrigger="<c-b>"
@@ -108,8 +116,8 @@ Plug 'honza/vim-snippets' " https://github.com/honza/vim-snippets
 " Plug 'Shougo/neosnippet-snippets' " https://github.com/Shougo/neosnippet-snippets
 " Plug 'scrooloose/nerdcommenter' " https://github.com/scrooloose/nerdcommenter
 Plug 'skywind3000/asyncrun.vim' " https://github.com/skywind3000/asyncrun.vim
-let g:asyncrun_open = 8
-autocmd FileType python nnoremap <F5> :AsyncRun -raw python %<cr>
+let g:asyncrun_open = 12
+autocmd FileType python nnoremap <F7> :w<cr>:AsyncRun -raw python %<cr>
 " Plug 'tomtom/tcomment_vim' " https://github.com/tomtom/tcomment_vim
 Plug 'tpope/vim-commentary' " https://github.com/tpope/vim-commentary
 Plug 'tpope/vim-repeat' " https://github.com/tpope/vim-repeat
@@ -162,8 +170,8 @@ Plug 'chriskempson/base16-vim' " https://github.com/chriskempson/base16-vim
 Plug 'nathanaelkane/vim-indent-guides' " https://github.com/nathanaelkane/vim-indent-guides
 Plug 'Yggdroot/indentLine' " https://github.com/Yggdroot/indentLine
 autocmd FileType tex let g:indentLine_enabled=0
-Plug 'rhysd/devdocs.vim' " https://github.com/rhysd/devdocs.vim
-nnoremap <ALT-k> <Plug>(devdocs-under-cursor)
+" Plug 'rhysd/devdocs.vim' " https://github.com/rhysd/devdocs.vim
+" nnoremap <leader>dd <Plug>(devdocs-under-cursor)
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " https://github.com/junegunn/fzf
 
 " Add plugins to &runtimepath

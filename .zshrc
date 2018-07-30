@@ -69,7 +69,8 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-export PATH=/usr/local/anaconda3/bin:"$PATH"
+# export PATH=/usr/local/anaconda3/bin:"$PATH"
+. /usr/local/anaconda3/etc/profile.d/conda.sh
 export LESS=iRj.5
 # export ZSH_TMUX_AUTOSTART=true
 
@@ -104,9 +105,12 @@ z() {
     [ $# -gt 0 ] && _z "$*" && return
     cd "$(_z -l 2>&1 | fzf --height 40% --nth 2.. --reverse --inline-info +s --tac --query "${*##-* }" | sed 's/^[0-9,.]* *//')"
 }
+# zplug 'esc/conda-zsh-completion'
+zplug 'malramsay64/conda-zsh-completion'
 
-zplug mafredri/zsh-async, from:github
-zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
+zplug denysdovhan/spaceship-prompt, use:spaceship.zsh, from:github, as:theme
+# zplug mafredri/zsh-async, from:github
+# zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
 
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
