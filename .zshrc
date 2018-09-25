@@ -69,7 +69,8 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-export PATH=~/anaconda3/bin:"$PATH"
+. ~/anaconda3/etc/profile.d/conda.sh
+conda activate
 export LESS=iRj.5
 # export ZSH_TMUX_AUTOSTART=true
 
