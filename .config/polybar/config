@@ -138,6 +138,7 @@ exec-if = [[ "$(playerctl status)" = "Playing" || "$(playerctl status)" = "Pause
 interval = 1
 format-prefix = " "
 format = <label>
+; label-font = 3
 
 [module/xwindow]
 type = internal/xwindow

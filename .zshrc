@@ -72,6 +72,8 @@ source $ZSH/oh-my-zsh.sh
 . ~/anaconda3/etc/profile.d/conda.sh
 conda activate
 export LESS=iRj.5
+export EDITOR=nvim
+export PAGER=less
 # export ZSH_TMUX_AUTOSTART=true
 
 # Preferred editor for local and remote sessions

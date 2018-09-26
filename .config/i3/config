@@ -134,6 +134,20 @@ assign [class="kitty"] $ws1
 assign [class="Zathura"] $ws2
 assign [class="Firefox Developer Edition"] $ws3
 assign [class="Google-chrome-beta"] $ws4
+assign [class="Spotify"] $ws10
+
+exec kitty
+exec firefox-developer-edition
+exec google-chrome-beta
+exec spotify
+
+workspace $ws1 output HDMI-2
+workspace $ws2 output HDMI-2
+workspace $ws3 output DP-1
+workspace $ws4 output DP-1
+workspace $ws5 output DP-1
+workspace $ws6 output DP-1
+workspace $ws10 output DP-1
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -193,6 +207,7 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 bindsym F8 exec playerctl play-pause
+bindsym F9 exec playerctl next
 
 gaps inner 8
 exec --no-startup-id compton
@@ -202,3 +217,5 @@ exec_always --no-startup-id xinput list | egrep "slave.*pointer" | grep -v XTEST
 exec_always --no-startup-id xrandr --output HDMI-2 --mode 1920x1080 --pos 0x0 --rotate left --output DP-1 --primary --mode 1920x1080 --pos 1080x460
 exec_always --no-startup-id feh --randomize --bg-fill ~/wallpapers/*
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
+exec --no-startup-id redshift
