@@ -131,15 +131,19 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
 assign [class="kitty"] $ws1
+assign [class="Pomello"] $ws1
 assign [class="Zathura"] $ws2
 assign [class="Firefox Developer Edition"] $ws3
 assign [class="Google-chrome-beta"] $ws4
 assign [class="Spotify"] $ws10
+for_window [class="Pomello"] floating enable
+for_window [class="Pomello"] sticky enable
 
 exec kitty
 exec firefox-developer-edition
 exec google-chrome-beta
 exec spotify
+exec pomello
 
 workspace $ws1 output HDMI-2
 workspace $ws2 output HDMI-2
