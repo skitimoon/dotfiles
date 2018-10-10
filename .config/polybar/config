@@ -55,6 +55,7 @@ module-margin-right = 2
 font-0 = Fira Code:pixelsize=10;1
 font-1 = FuraCode Nerd Font Mono:pixelsize=14;0
 font-2 = Noto Serif Thai:pixelsize=10;1
+font-3 = Noto Color Emoji:scale=12;1
 
 modules-left = bspwm i3
 modules-center = 
@@ -107,6 +108,7 @@ module-margin-right = 2
 font-0 = Fira Code:pixelsize=10;1
 font-1 = FuraCode Nerd Font Mono:pixelsize=12;0
 font-2 = Noto Serif Thai:pixelsize=10;1
+font-3 = Noto Color Emoji:scale=12;1
 
 modules-left = bspwm i3
 modules-center = 
@@ -321,12 +323,12 @@ type = internal/date
 interval = 5
 
 date = " %d-%m-%Y"
-date-alt = " %a %d, %b, %Y"
+date-alt = " %a %d %b %Y"
 
 time = %I:%M
 time-alt = %H:%M:%S
 
-format-prefix = 
+format-prefix = 📅
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #0a6cf5
 
@@ -364,11 +366,11 @@ format-volume = <ramp-volume> <bar-volume> <label-volume>
 label-volume = %percentage%%
 label-volume-foreground = ${root.foreground}
 
-ramp-volume-0 = 
-ramp-volume-1 = 
-ramp-volume-2 = 
+ramp-volume-0 = 🔈
+ramp-volume-1 = 🔉
+ramp-volume-2 = 🔊
 
-format-muted-prefix = "ﱝ "
+format-muted-prefix = "🔇 "
 format-muted-foreground = ${colors.foreground-alt}
 label-muted = -sound muted-
 

@@ -69,6 +69,9 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+
 . ~/anaconda3/etc/profile.d/conda.sh
 conda activate
 export LESS=iRj.5

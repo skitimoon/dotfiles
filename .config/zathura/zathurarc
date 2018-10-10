@@ -1,0 +1,7 @@
+map d scroll half-down
+map u scroll half-up
+map e scroll down
+map y scroll up
+map = zoom in
+map + zoom default
+map D toggle_page_mode
