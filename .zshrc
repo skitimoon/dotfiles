@@ -69,21 +69,21 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
+# source /usr/share/fzf/key-bindings.zsh
+# source /usr/share/fzf/completion.zsh
 
-# added by Anaconda3 5.3.1 installer
+# added by Miniconda3 4.5.12 installer
 # >>> conda init >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$(CONDA_REPORT_ERRORS=false '/home/skitimoon/anaconda3/bin/conda' shell.bash hook 2> /dev/null)"
+__conda_setup="$(CONDA_REPORT_ERRORS=false '/home/skitimoon/miniconda3/bin/conda' shell.bash hook 2> /dev/null)"
 if [ $? -eq 0 ]; then
     \eval "$__conda_setup"
 else
-    if [ -f "/home/skitimoon/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/skitimoon/anaconda3/etc/profile.d/conda.sh"
+    if [ -f "/home/skitimoon/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/skitimoon/miniconda3/etc/profile.d/conda.sh"
         CONDA_CHANGEPS1=false conda activate base
     else
-        \export PATH="/home/skitimoon/anaconda3/bin:$PATH"
+        \export PATH="/home/skitimoon/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
