@@ -146,6 +146,7 @@ assign [class="Google-chrome-beta"] $ws4
 assign [class="Spotify"] $ws10
 for_window [class="Pomello"] floating enable
 for_window [class="Pomello"] sticky enable
+for_window [class="vtk"] floating enable
 
 # exec $term
 exec --no-startup-id i3-msg 'workspace $ws1; exec $term'
@@ -222,7 +223,7 @@ gaps inner 4
 exec --no-startup-id xbanish
 exec --no-startup-id compton
 exec --no-startup-id xset b 0 0 0
-exec_always --no-startup-id xcape -t 250
+# exec_always --no-startup-id xcape -t 250
 exec_always --no-startup-id xinput list | egrep "slave.*pointer" | grep -v XTEST | sed -e 's/^.*id=//' -e 's/\s.*$//' | xargs -I{} xinput set-prop {} 286 1
 exec_always --no-startup-id xrandr --output HDMI-2 --mode 1920x1080 --pos 0x0 --rotate left --output DP-1 --primary --mode 1920x1080 --pos 1080x460
 exec_always --no-startup-id feh --randomize --bg-fill ~/wallpapers/*
