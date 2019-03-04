@@ -135,7 +135,7 @@ cursor-scroll = ns-resize
 
 [module/spotify]
 type = custom/script
-exec = if [[ "$(playerctl status)" = "Playing" ]]; then echo -n " "; playerctl metadata xesam:artist; echo -n " - "; playerctl metadata xesam:title; else echo -n " Paused"; fi
+exec = if [[ "$(playerctl status)" = "Playing" ]]; then echo -n " "; playerctl metadata xesam:artist; echo -n "- "; playerctl metadata xesam:title; else echo -n " Paused"; fi | paste -s -d' '
 exec-if = [[ "$(playerctl status)" = "Playing" || "$(playerctl status)" = "Paused" ]] && echo "0"
 interval = 1
 format-prefix = " "
