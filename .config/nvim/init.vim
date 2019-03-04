@@ -52,6 +52,8 @@ cnoremap <M-f> <S-Right>
 cnoremap <C-n> <down>
 cnoremap <C-p> <up>
 
+let g:python3_host_prog = '/home/skitimoon/miniconda3/bin/python3'
+
 call plug#begin()
 
 " Plug 'google/vim-searchindex' " https://github.com/google/vim-searchindex
