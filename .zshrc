@@ -66,8 +66,6 @@ source $ZSH/oh-my-zsh.sh
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
-export PATH="$PATH:`yarn global bin`"
-
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -77,18 +75,18 @@ export PATH="$PATH:`yarn global bin`"
 # added by Miniconda3 4.5.12 installer
 # >>> conda init >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$(CONDA_REPORT_ERRORS=false '/home/skitimoon/miniconda3/bin/conda' shell.bash hook 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    \eval "$__conda_setup"
-else
-    if [ -f "/home/skitimoon/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/skitimoon/miniconda3/etc/profile.d/conda.sh"
-        CONDA_CHANGEPS1=false conda activate base
-    else
-        \export PATH="/home/skitimoon/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
+# __conda_setup="$(CONDA_REPORT_ERRORS=false '/home/skitimoon/miniconda3/bin/conda' shell.bash hook 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#     \eval "$__conda_setup"
+# else
+#     if [ -f "/home/skitimoon/miniconda3/etc/profile.d/conda.sh" ]; then
+#         . "/home/skitimoon/miniconda3/etc/profile.d/conda.sh"
+#         CONDA_CHANGEPS1=false conda activate base
+#     else
+#         \export PATH="/home/skitimoon/miniconda3/bin:$PATH"
+#     fi
+# fi
+# unset __conda_setup
 # <<< conda init <<<
 
 export LESS=iRj.5
@@ -127,8 +125,8 @@ z() {
     [ $# -gt 0 ] && _z "$*" && return
     cd "$(_z -l 2>&1 | fzf --height 40% --nth 2.. --reverse --inline-info +s --tac --query "${*##-* }" | sed 's/^[0-9,.]* *//')"
 }
-# zplug 'esc/conda-zsh-completion'
-zplug 'malramsay64/conda-zsh-completion'
+zplug 'esc/conda-zsh-completion'
+# zplug 'malramsay64/conda-zsh-completion'
 
 zplug denysdovhan/spaceship-prompt, use:spaceship.zsh, from:github, as:theme
 # zplug mafredri/zsh-async, from:github
