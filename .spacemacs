@@ -330,9 +330,20 @@ you should place your code here."
   ;; (setq-default evil-escape-unordered-key-sequence t)
   (setq-default evil-esc-delay 0.2)
   (setq-default js2-strict-missing-semi-warning nil)
-  (setq-default undo-tree-history-directory-alist '(("." . "~/emacs.d/.cache")))
+  ;; (setq-default undo-tree-auto-save-history t)
+  ;; (setq-default undo-tree-history-directory-alist '(("." . ,(concat spacemacs-cache-directory "undo"))))
+  (setq undo-tree-auto-save-history t
+        undo-tree-history-directory-alist
+        `(("." . ,(concat spacemacs-cache-directory "undo"))))
+  (unless (file-exists-p (concat spacemacs-cache-directory "undo"))
+    (make-directory (concat spacemacs-cache-directory "undo")))
   (add-hook 'doc-view-mode-hook 'auto-revert-mode)
-  (setq TeX-view-program-selection '((output-pdf "Zathura")))
+  (setq TeX-view-program-selection '(((output-dvi has-no-display-manager) "dvi2tty")
+                                      ((output-dvi style-pstricks) "dvips and gv")
+                                      (output-dvi "xdvi")
+                                      (output-pdf "PDF Tools")
+                                      (output-html "xdg-open")
+                                     ))
   (setq org-ref-default-bibliography '("~/Papers/references.bib"))
   (setq org-startup-indented t)
   (setq org-highlight-latex-and-related '(latex))
@@ -355,7 +366,25 @@ you should place your code here."
   (setenv "WORKON_HOME" "/home/skitimoon/miniconda3/envs")
   (pyvenv-mode t)
   (desktop-save-mode t)
-  )
+  (defun python-shell-send-region-or-line ()
+     "Sends from python-mode buffer to a python shell, intelligently"
+     (interactive)
+     (cond
+      ((region-active-p)
+       (setq deactivate-mark t)
+       (python-shell-send-region (region-beginning) (region-end)))
+      (t (python-shell-send-current-statement))))
+  (defun python-shell-send-current-statement ()
+    "Send current statement to Python shell.
+    Taken from elpy-shell-send-current-statement"
+    (interactive)
+    (let ((beg (python-nav-beginning-of-statement))
+          (end (python-nav-end-of-statement)))
+      (python-shell-send-string (buffer-substring beg end)))
+    (python-nav-forward-statement))
+  (spacemacs|use-package-add-hook python
+    :post-config
+    (spacemacs/set-leader-keys-for-major-mode 'python-mode "sr" 'python-shell-send-region-or-line)))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
