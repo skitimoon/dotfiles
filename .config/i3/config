@@ -133,9 +133,10 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 
 workspace $ws1 output HDMI-2
 workspace $ws2 output HDMI-2
+workspace $ws5 output HDMI-2
 workspace $ws3 output DP-1
 workspace $ws4 output DP-1
-# workspace $ws5 output DP-1
+workspace $ws8 output DP-1
 workspace $ws10 output DP-1
 
 # assign [class="kitty"] $ws1
@@ -218,6 +219,7 @@ bindsym XF86AudioPlay exec playerctl play
 bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
+bindsym F7 exec playerctl previous
 bindsym F8 exec playerctl play-pause
 bindsym F9 exec playerctl next
 
