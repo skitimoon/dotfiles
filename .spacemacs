@@ -360,8 +360,12 @@ you should place your code here."
   (define-key evil-insert-state-map (kbd "C-l") 'hippie-expand)
   (push '("\\*compilation\\*" . (nil (reusable-frames . t))) display-buffer-alist)
   (setq-default evil-search-module 'evil-search)
-  (setq-default global-evil-search-highlight-persist nil)
   (setq-default evil-ex-search-persistent-highlight nil)
+  (with-eval-after-load 'auto-highlight-symbol
+    (define-key evil-motion-state-map (kbd "*") 'evil-ex-search-word-forward)
+    (define-key evil-motion-state-map (kbd "#") 'evil-ex-search-word-backward))
+  ;; (setq-default global-evil-search-highlight-persist nil)
+  ;; (global-evil-search-highlight-persist nil)
   ;; (setq-default evil-ex-search-highlight-all nil)
   (setenv "WORKON_HOME" "/home/skitimoon/miniconda3/envs")
   (pyvenv-mode t)
@@ -384,7 +388,8 @@ you should place your code here."
     (python-nav-forward-statement))
   (spacemacs|use-package-add-hook python
     :post-config
-    (spacemacs/set-leader-keys-for-major-mode 'python-mode "sr" 'python-shell-send-region-or-line)))
+    (spacemacs/set-leader-keys-for-major-mode 'python-mode "sr" 'python-shell-send-region-or-line))
+  )
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
