@@ -228,7 +228,7 @@ exec --no-startup-id xbanish
 exec --no-startup-id compton
 exec --no-startup-id xset b 0 0 0
 # exec_always --no-startup-id xcape -t 250
-exec_always --no-startup-id xinput list | egrep "slave.*pointer" | grep -v XTEST | sed -e 's/^.*id=//' -e 's/\s.*$//' | xargs -I{} xinput set-prop {} 287 1
+# exec_always --no-startup-id xinput list | egrep "slave.*pointer" | grep -v XTEST | sed -e 's/^.*id=//' -e 's/\s.*$//' | xargs -I{} xinput set-prop {} 287 1
 exec_always --no-startup-id feh --randomize --bg-fill ~/wallpapers/*
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
