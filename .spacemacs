@@ -33,10 +33,11 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(bibtex
-     latex
-     yaml
+   '(
      python
+     latex
+     bibtex
+     pdf
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
@@ -479,12 +480,11 @@ configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
   (setq-default evil-esc-delay 0.2)
-  ;; (setq TeX-view-program-selection '(((output-dvi has-no-display-manager) "dvi2tty")
-  ;;                                     ((output-dvi style-pstricks) "dvips and gv")
-  ;;                                     (output-dvi "xdvi")
-  ;;                                     (output-pdf "PDF Tools")
-  ;;                                     (output-html "xdg-open")
-  ;;                                    ))
+  (setq TeX-view-program-selection '(((output-dvi has-no-display-manager) "dvi2tty")
+                                     ((output-dvi style-pstricks) "dvips and gv")
+                                     (output-dvi "xdvi")
+                                     (output-pdf "PDF Tools")
+                                     (output-html "xdg-open")))
   (setq org-ref-default-bibliography '("~/Papers/references.bib"))
   (setq org-startup-indented t)
   (define-key evil-normal-state-map (kbd "C-a") 'evil-numbers/inc-at-pt)
@@ -494,9 +494,10 @@ before packages are loaded."
   ;; (define-key evil-normal-state-map (kbd "C-k") 'evil-window-up)
   ;; (define-key evil-normal-state-map (kbd "C-l") 'evil-window-right)
   (define-key evil-normal-state-map (kbd "\\") 'evil-repeat-find-char-reverse)
-  ;; (define-key evil-insert-state-map (kbd "<backtab>") 'sp-up-sexp)
+  (define-key evil-insert-state-map (kbd "<backtab>") 'sp-up-sexp)
   (define-key evil-insert-state-map (kbd "C-l") 'hippie-expand)
-  ;; (push '("\\*compilation\\*" . (nil (reusable-frames . t))) display-buffer-alist)
+  (push '("\\*compilation\\*" . (nil (reusable-frames . t))) display-buffer-alist)
+  (push '("\\*Python\\*" . (nil (reusable-frames . t))) display-buffer-alist)
   (setenv "WORKON_HOME" "/home/skitimoon/miniconda3/envs")
   (pyvenv-mode t)
   (defun python-shell-send-region-or-line ()
