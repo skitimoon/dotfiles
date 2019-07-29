@@ -496,8 +496,17 @@ before packages are loaded."
   (define-key evil-normal-state-map (kbd "\\") 'evil-repeat-find-char-reverse)
   (define-key evil-insert-state-map (kbd "<backtab>") 'sp-up-sexp)
   (define-key evil-insert-state-map (kbd "C-l") 'hippie-expand)
-  (push '("\\*compilation\\*" . (nil (reusable-frames . t))) display-buffer-alist)
-  (push '("\\*Python\\*" . (nil (reusable-frames . t))) display-buffer-alist)
+  ;; (add-to-list 'display-buffer-alist
+  ;;              '("\\*compilation\\*" nil (reusable-frames . t)))
+  (add-to-list
+   'display-buffer-alist
+   '("\\*compilation\\*" display-buffer-reuse-window (reusable-frames . t)))
+  (add-to-list
+   'display-buffer-alist
+   '("\\*Python\\*" display-buffer-reuse-window (reusable-frames . t)))
+  (add-to-list
+   'display-buffer-alist
+   '("pdf" display-buffer-reuse-window (reusable-frames . t)))
   (setenv "WORKON_HOME" "/home/skitimoon/miniconda3/envs")
   (pyvenv-mode t)
   (defun python-shell-send-region-or-line ()
