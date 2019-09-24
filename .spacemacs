@@ -482,7 +482,6 @@ before packages are loaded."
                                      (output-dvi "xdvi")
                                      (output-pdf "PDF Tools")
                                      (output-html "xdg-open")))
-  (setq org-ref-default-bibliography '("~/Papers/references.bib"))
   (setq org-startup-indented t)
   (define-key evil-normal-state-map (kbd "C-a") 'evil-numbers/inc-at-pt)
   (define-key evil-normal-state-map (kbd "-") 'evil-numbers/dec-at-pt)
