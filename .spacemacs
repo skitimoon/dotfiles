@@ -64,9 +64,6 @@ This function should only modify configuration layer settings."
                       auto-completion-enable-help-tooltip t
                       auto-completion-enable-sort-by-usage t)
      (python :variables python-test-runner 'pytest)
-     (setq-default dotspacemacs-editing-style '(vim :variables
-                                                    vim-style-visual-feedback t
-                                                    vim-style-remap-Y-to-y$ t))
      )
 
    ;; List of additional packages that will be installed without being
