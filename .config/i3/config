@@ -156,7 +156,8 @@ for_window [class="Pomello"] floating enable
 for_window [class="Pomello"] sticky enable
 for_window [class="vtk"] floating enable
 
-exec_always --no-startup-id xrandr --output $mnt2 --mode 1920x1080 --pos 0x0 --rotate left --output $mnt1 --primary --mode 1920x1080 --pos 1080x460 --output $mnt3 --mode 1920x1080 --pos 3000x460
+# exec_always --no-startup-id xrandr --output $mnt2 --mode 1920x1080 --pos 0x0 --rotate left --output $mnt1 --primary --mode 1920x1080 --pos 1080x460 --output $mnt3 --mode 1920x1080 --pos 3000x460
+exec_always --no-startup-id xrandr --output $mnt2 --mode 1920x1080 --pos -1080x-460 --rotate left --output $mnt1 --primary --mode 1920x1080 --pos 0x0 --output $mnt3 --mode 1920x1080 --pos 1920x0
 exec $term -e tmux
 # exec --no-startup-id i3-msg 'workspace $ws1; exec $term'
 exec firefox-developer-edition
