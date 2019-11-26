@@ -122,7 +122,7 @@ zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/sudo", from:oh-my-zsh
 zplug "plugins/tmux", from:oh-my-zsh
 # zplug "plugins/vi-mode", from:oh-my-zsh
-zplug "plugins/yarn", from:oh-my-zsh
+# zplug "plugins/yarn", from:oh-my-zsh
 zplug "rupa/z"
 . ~/.zplug/repos/rupa/z/z.sh
 unalias z 2> /dev/null
