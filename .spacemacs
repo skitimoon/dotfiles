@@ -480,12 +480,7 @@ configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
   (setq-default evil-esc-delay 0.2)
-  (setq TeX-view-program-selection '(((output-dvi has-no-display-manager) "dvi2tty")
-                                     ((output-dvi style-pstricks) "dvips and gv")
-                                     (output-dvi "xdvi")
-                                     (output-pdf "PDF Tools")
-                                     (output-html "xdg-open")))
-  (setq org-startup-indented t)
+  ;; (setq org-startup-indented t)
   (define-key evil-normal-state-map (kbd "C-a") 'evil-numbers/inc-at-pt)
   (define-key evil-normal-state-map (kbd "-") 'evil-numbers/dec-at-pt)
   ;; (define-key evil-normal-state-map (kbd "C-h") 'evil-window-left)
@@ -495,8 +490,6 @@ before packages are loaded."
   (define-key evil-normal-state-map (kbd "\\") 'evil-repeat-find-char-reverse)
   (define-key evil-insert-state-map (kbd "<backtab>") 'sp-up-sexp)
   (define-key evil-insert-state-map (kbd "C-l") 'hippie-expand)
-  ;; (add-to-list 'display-buffer-alist
-  ;;              '("\\*compilation\\*" nil (reusable-frames . t)))
   (add-to-list
    'display-buffer-alist
    '("\\*compilation\\*" display-buffer-reuse-window (reusable-frames . t)))
