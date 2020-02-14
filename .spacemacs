@@ -32,7 +32,8 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(javascript
+   '(markdown
+     javascript
      shell
      python
      latex
@@ -48,7 +49,7 @@ This function should only modify configuration layer settings."
      emacs-lisp
      git
      helm
-     lsp
+     ;; lsp
      ;; markdown
      multiple-cursors
      org
