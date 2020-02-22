@@ -241,4 +241,3 @@ exec --no-startup-id setxkbmap -layout us,th -option ctrl:nocaps
 exec_always --no-startup-id feh --randomize --bg-fill ~/wallpapers/*
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
-exec --no-startup-id redshift
