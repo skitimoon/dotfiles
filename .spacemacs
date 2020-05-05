@@ -514,7 +514,7 @@ before packages are loaded."
   (add-to-list
    'display-buffer-alist
    '("pdf" display-buffer-reuse-window (reusable-frames . t)))
-  (setenv "WORKON_HOME" "/home/skitimoon/miniconda3/envs")
+  (setenv "WORKON_HOME" "~/miniconda3/envs")
   (pyvenv-mode t)
   (defun python-shell-send-region-or-line ()
      "Sends from python-mode buffer to a python shell, intelligently"
