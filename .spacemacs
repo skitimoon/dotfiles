@@ -32,13 +32,16 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(ipython-notebook
+   '(
+     dap
+     ipython-notebook
      javascript
      shell
      python
      latex
      bibtex
      pdf
+     ranger
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
@@ -49,7 +52,7 @@ This function should only modify configuration layer settings."
      emacs-lisp
      git
      helm
-     ;; lsp
+     lsp
      markdown
      multiple-cursors
      org
@@ -64,7 +67,10 @@ This function should only modify configuration layer settings."
                       auto-completion-enable-snippets-in-popup t
                       auto-completion-enable-help-tooltip t
                       auto-completion-enable-sort-by-usage t)
-     (python :variables python-test-runner 'pytest)
+     (python :variables
+             python-lsp-server 'pyls
+             python-test-runner 'pytest
+             python-formatter 'black)
      )
 
    ;; List of additional packages that will be installed without being
@@ -505,10 +511,6 @@ before packages are loaded."
   ;; (setq org-startup-indented t)
   (define-key evil-normal-state-map (kbd "C-a") 'evil-numbers/inc-at-pt)
   (define-key evil-normal-state-map (kbd "-") 'evil-numbers/dec-at-pt)
-  ;; (define-key evil-normal-state-map (kbd "C-h") 'evil-window-left)
-  ;; (define-key evil-normal-state-map (kbd "C-j") 'evil-window-down)
-  ;; (define-key evil-normal-state-map (kbd "C-k") 'evil-window-up)
-  ;; (define-key evil-normal-state-map (kbd "C-l") 'evil-window-right)
   (define-key evil-normal-state-map (kbd "\\") 'evil-repeat-find-char-reverse)
   (define-key evil-insert-state-map (kbd "<backtab>") 'sp-up-sexp)
   (define-key evil-insert-state-map (kbd "C-l") 'hippie-expand)
