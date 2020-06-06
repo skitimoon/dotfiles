@@ -54,6 +54,10 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma/fast-syntax-highlighting
 zinit light esc/conda-zsh-completion
 
+zinit ice from"gh-r" as"program"
+zinit load junegunn/fzf-bin
+export FZF_BASE="$HOME/.zinit/plugins/junegunn---fzf-bin/"
+
 zinit snippet OMZ::lib/directories.zsh
 zinit snippet OMZ::plugins/common-aliases/common-aliases.plugin.zsh
 zinit snippet OMZ::plugins/fzf/fzf.plugin.zsh
@@ -65,9 +69,6 @@ zinit ice atclone"dircolors -b LS_COLORS > clrs.zsh" \
       atpull'%atclone' pick"clrs.zsh" nocompile'!' \
       atload'zstyle ":completion:*" list-colors “${(s.:.)LS_COLORS}”'
 zinit light trapd00r/LS_COLORS
-
-zinit ice from"gh-r" as"program"
-zinit load junegunn/fzf-bin
 
 # Load the pure theme, with zsh-async library that's bundled with it.
 zinit ice pick"async.zsh" src"pure.zsh"
