@@ -21,7 +21,7 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-# export FZF_BASE=~/.zinit/plugins/junegunn---fzf-bin
+export FZF_BASE="$HOME/miniconda3/share/fzf"
 
 alias -g ..='cd ..'
 
