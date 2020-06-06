@@ -8,14 +8,14 @@ bindkey -e
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/skitimoon/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+__conda_setup="$('$HOME/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/skitimoon/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/skitimoon/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "$HOME/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "$HOME/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/skitimoon/miniconda3/bin:$PATH"
+        export PATH="$HOME/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
@@ -56,12 +56,13 @@ zinit light esc/conda-zsh-completion
 
 zinit ice from"gh-r" as"program"
 zinit load junegunn/fzf-bin
-export FZF_BASE="$HOME/.zinit/plugins/junegunn---fzf-bin/"
+export FZF_BASE="$HOME/.zinit/plugins/junegunn---fzf-bin/fzf"
 
 zinit snippet OMZ::lib/directories.zsh
 zinit snippet OMZ::plugins/common-aliases/common-aliases.plugin.zsh
 zinit snippet OMZ::plugins/fzf/fzf.plugin.zsh
 zinit snippet OMZ::plugins/git/git.plugin.zsh
+
 zinit ice wait lucid
 zinit light rupa/z
 
@@ -75,7 +76,7 @@ zinit ice pick"async.zsh" src"pure.zsh"
 zinit light sindresorhus/pure
 
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/skitimoon/.zshrc'
+zstyle :compinstall filename '$HOME/.zshrc'
 
 autoload -Uz compinit
 compinit
