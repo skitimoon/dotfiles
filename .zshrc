@@ -6,6 +6,8 @@ setopt appendhistory autocd extendedglob nomatch notify
 bindkey -e
 # End of lines configured by zsh-newuser-install
 
+alias ls='ls --color=auto'
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('$HOME/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
@@ -22,8 +24,6 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 export FZF_BASE="$HOME/miniconda3/share/fzf"
-
-alias -g ..='cd ..'
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
@@ -47,33 +47,35 @@ zinit light-mode for \
 
 ### End of Zinit's installer chunk
 
-zinit ice blockf
-zinit light zsh-users/zsh-completions
+zinit wait lucid for \
+      atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
+        zdharma/fast-syntax-highlighting \
+      blockf \
+        zsh-users/zsh-completions \
+      blockf \
+        esc/conda-zsh-completion \
+      atload"!_zsh_autosuggest_start" \
+        zsh-users/zsh-autosuggestions
 
-zinit light zsh-users/zsh-autosuggestions
-zinit light zdharma/fast-syntax-highlighting
-zinit light esc/conda-zsh-completion
+zinit wait lucid for \
+      OMZ::lib/directories.zsh \
+      OMZ::plugins/common-aliases/common-aliases.plugin.zsh \
+      OMZ::plugins/fzf/fzf.plugin.zsh \
+      OMZ::plugins/git/git.plugin.zsh \
+      rupa/z
 
-zinit snippet OMZ::lib/directories.zsh
-zinit snippet OMZ::plugins/common-aliases/common-aliases.plugin.zsh
-zinit snippet OMZ::plugins/fzf/fzf.plugin.zsh
-zinit snippet OMZ::plugins/git/git.plugin.zsh
-
-zinit ice wait lucid
-zinit light rupa/z
-
-zinit ice atclone"dircolors -b LS_COLORS > clrs.zsh" \
+zinit ice wait lucid atclone"dircolors -b LS_COLORS > clrs.zsh" \
       atpull'%atclone' pick"clrs.zsh" nocompile'!' \
       atload'zstyle ":completion:*" list-colors “${(s.:.)LS_COLORS}”'
-zinit light trapd00r/LS_COLORS
+zinit load trapd00r/LS_COLORS
 
 # Load the pure theme, with zsh-async library that's bundled with it.
-zinit ice pick"async.zsh" src"pure.zsh"
+zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
 zinit light sindresorhus/pure
 
-# The following lines were added by compinstall
-zstyle :compinstall filename '$HOME/.zshrc'
+# # The following lines were added by compinstall
+# zstyle :compinstall filename '$HOME/.zshrc'
 
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
+# autoload -Uz compinit
+# compinit
+# # End of lines added by compinstall
