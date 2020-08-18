@@ -71,6 +71,8 @@ This function should only modify configuration layer settings."
              python-lsp-server 'pyls
              python-test-runner 'pytest
              python-formatter 'black)
+     (org :variables
+          org-highlight-latex-and-related '(native))
      )
 
    ;; List of additional packages that will be installed without being
