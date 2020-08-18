@@ -32,8 +32,7 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(
-     dap
+   '(dap
      ipython-notebook
      javascript
      shell
@@ -68,7 +67,6 @@ This function should only modify configuration layer settings."
                       auto-completion-enable-help-tooltip t
                       auto-completion-enable-sort-by-usage t)
      (python :variables
-             python-lsp-server 'pyls
              python-test-runner 'pytest
              python-formatter 'black)
      (org :variables
@@ -472,6 +470,13 @@ It should only modify the values of Spacemacs settings."
    ;; (default t)
    dotspacemacs-use-clean-aindent-mode t
 
+   ;; If non-nil shift your number row to match the entered keyboard layout
+   ;; (only in insert mode). Currently the keyboard layouts
+   ;; (qwerty-us qwertz-de) are supported.
+   ;; New layouts can be added in `spacemacs-editing' layer.
+   ;; (default nil)
+   dotspacemacs-swap-number-row nil
+
    ;; Either nil or a number of seconds. If non-nil zone out after the specified
    ;; number of seconds. (default nil)
    dotspacemacs-zone-out-when-idle nil
@@ -515,7 +520,6 @@ configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
   (setq-default evil-esc-delay 0.2)
-  ;; (setq org-startup-indented t)
   (define-key evil-normal-state-map (kbd "C-a") 'evil-numbers/inc-at-pt)
   (define-key evil-normal-state-map (kbd "-") 'evil-numbers/dec-at-pt)
   (define-key evil-normal-state-map (kbd "\\") 'evil-repeat-find-char-reverse)
