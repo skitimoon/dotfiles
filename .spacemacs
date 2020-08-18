@@ -391,9 +391,10 @@ It should only modify the values of Spacemacs settings."
    ;;   :size-limit-kb 1000)
    ;; When used in a plist, `visual' takes precedence over `relative'.
    ;; (default nil)
-   dotspacemacs-line-numbers '(:reletive t
+   dotspacemacs-line-numbers '(:relative t
                                :disabled-for-modes pdf-view-mode
                                                    doc-view-mode)
+
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
    dotspacemacs-folding-method 'evil
