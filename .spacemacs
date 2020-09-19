@@ -32,7 +32,8 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(dap
+   '(haskell
+     dap
      ipython-notebook
      javascript
      shell
@@ -121,7 +122,7 @@ It should only modify the values of Spacemacs settings."
    ;; To load it when starting Emacs add the parameter `--dump-file'
    ;; when invoking Emacs 27.1 executable on the command line, for instance:
    ;;   ./emacs --dump-file=$HOME/.emacs.d/.cache/dumps/spacemacs-27.1.pdmp
-   ;; (default spacemacs-27.1.pdmp)
+   ;; (default (format "spacemacs-%s.pdmp" emacs-version))
    dotspacemacs-emacs-dumper-dump-file (format "spacemacs-%s.pdmp" emacs-version)
 
    ;; If non-nil ELPA repositories are contacted via HTTPS whenever it's
@@ -151,7 +152,9 @@ It should only modify the values of Spacemacs settings."
 
    ;; If non-nil then Spacelpa repository is the primary source to install
    ;; a locked version of packages. If nil then Spacemacs will install the
-   ;; latest version of packages from MELPA. (default nil)
+   ;; latest version of packages from MELPA. Spacelpa is currently in
+   ;; experimental state please use only for testing purposes.
+   ;; (default nil)
    dotspacemacs-use-spacelpa nil
 
    ;; If non-nil then verify the signature for downloaded Spacelpa archives.
@@ -471,8 +474,8 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-use-clean-aindent-mode t
 
    ;; If non-nil shift your number row to match the entered keyboard layout
-   ;; (only in insert mode). Currently the keyboard layouts
-   ;; (qwerty-us qwertz-de) are supported.
+   ;; (only in insert state). Currently supported keyboard layouts are:
+   ;; `qwerty-us', `qwertz-de' and `querty-ca-fr'.
    ;; New layouts can be added in `spacemacs-editing' layer.
    ;; (default nil)
    dotspacemacs-swap-number-row nil
@@ -536,25 +539,25 @@ before packages are loaded."
    '("pdf" display-buffer-reuse-window (reusable-frames . t)))
   (setenv "WORKON_HOME" "~/miniconda3/envs")
   (pyvenv-mode t)
-  (defun python-shell-send-region-or-line ()
-     "Sends from python-mode buffer to a python shell, intelligently"
-     (interactive)
-     (cond
-      ((region-active-p)
-       (setq deactivate-mark t)
-       (python-shell-send-region (region-beginning) (region-end)))
-      (t (python-shell-send-current-statement))))
-  (defun python-shell-send-current-statement ()
-    "Send current statement to Python shell.
-    Taken from elpy-shell-send-current-statement"
-    (interactive)
-    (let ((beg (python-nav-beginning-of-statement))
-          (end (python-nav-end-of-statement)))
-      (python-shell-send-string (buffer-substring beg end)))
-    (python-nav-forward-statement))
-  (spacemacs|use-package-add-hook python
-    :post-config
-    (spacemacs/set-leader-keys-for-major-mode 'python-mode "sr" 'python-shell-send-region-or-line))
+  ;; (defun python-shell-send-region-or-line ()
+  ;;    "Sends from python-mode buffer to a python shell, intelligently"
+  ;;    (interactive)
+  ;;    (cond
+  ;;     ((region-active-p)
+  ;;      (setq deactivate-mark t)
+  ;;      (python-shell-send-region (region-beginning) (region-end)))
+  ;;     (t (python-shell-send-current-statement))))
+  ;; (defun python-shell-send-current-statement ()
+  ;;   "Send current statement to Python shell.
+  ;;   Taken from elpy-shell-send-current-statement"
+  ;;   (interactive)
+  ;;   (let ((beg (python-nav-beginning-of-statement))
+  ;;         (end (python-nav-end-of-statement)))
+  ;;     (python-shell-send-string (buffer-substring beg end)))
+  ;;   (python-nav-forward-statement))
+  ;; (spacemacs|use-package-add-hook python
+  ;;   :post-config
+  ;;   (spacemacs/set-leader-keys-for-major-mode 'python-mode "sr" 'python-shell-send-region-or-line))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
