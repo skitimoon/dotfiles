@@ -71,9 +71,12 @@ zinit ice wait lucid atclone"dircolors -b LS_COLORS > clrs.zsh" \
       atload'zstyle ":completion:*" list-colors “${(s.:.)LS_COLORS}”'
 zinit load trapd00r/LS_COLORS
 
-# Load the pure theme, with zsh-async library that's bundled with it.
-zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
-zinit light sindresorhus/pure
+zplugin ice from"gh-r" as"program" atload'!eval $(starship init zsh)'
+zplugin light starship/starship
+
+# # Load the pure theme, with zsh-async library that's bundled with it.
+# zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
+# zinit light sindresorhus/pure
 
 # # The following lines were added by compinstall
 # zstyle :compinstall filename '$HOME/.zshrc'
