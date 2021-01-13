@@ -23,6 +23,7 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+export PATH="$HOME/.local/bin:$PATH"
 export WORDCHARS="${WORDCHARS/\/}|"
 export EDITOR=nvim
 export FZF_BASE="$HOME/miniconda3/share/fzf"
