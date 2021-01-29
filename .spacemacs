@@ -560,25 +560,6 @@ before packages are loaded."
    '("pdf" display-buffer-reuse-window (reusable-frames . t)))
   (setenv "WORKON_HOME" "~/miniconda3/envs")
   (pyvenv-mode t)
-  ;; (defun python-shell-send-region-or-line ()
-  ;;    "Sends from python-mode buffer to a python shell, intelligently"
-  ;;    (interactive)
-  ;;    (cond
-  ;;     ((region-active-p)
-  ;;      (setq deactivate-mark t)
-  ;;      (python-shell-send-region (region-beginning) (region-end)))
-  ;;     (t (python-shell-send-current-statement))))
-  ;; (defun python-shell-send-current-statement ()
-  ;;   "Send current statement to Python shell.
-  ;;   Taken from elpy-shell-send-current-statement"
-  ;;   (interactive)
-  ;;   (let ((beg (python-nav-beginning-of-statement))
-  ;;         (end (python-nav-end-of-statement)))
-  ;;     (python-shell-send-string (buffer-substring beg end)))
-  ;;   (python-nav-forward-statement))
-  ;; (spacemacs|use-package-add-hook python
-  ;;   :post-config
-  ;;   (spacemacs/set-leader-keys-for-major-mode 'python-mode "sr" 'python-shell-send-region-or-line))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
