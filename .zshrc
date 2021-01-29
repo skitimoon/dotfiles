@@ -6,7 +6,7 @@ setopt appendhistory autocd extendedglob nomatch notify
 bindkey -e
 # End of lines configured by zsh-newuser-install
 
-alias ls='ls --color=auto'
+alias ls=exa
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
