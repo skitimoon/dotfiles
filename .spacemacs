@@ -555,8 +555,8 @@ before packages are loaded."
   (define-key evil-normal-state-map (kbd "C-a") 'evil-numbers/inc-at-pt)
   (define-key evil-normal-state-map (kbd "-") 'evil-numbers/dec-at-pt)
   (define-key evil-normal-state-map (kbd "\\") 'evil-repeat-find-char-reverse)
-  (define-key evil-insert-state-map (kbd "<backtab>") 'sp-up-sexp)
-  (define-key evil-insert-state-map (kbd "C-l") 'hippie-expand)
+  ;; (define-key evil-insert-state-map (kbd "<backtab>") 'sp-up-sexp)
+  (define-key evil-insert-state-map (kbd "C-/") 'hippie-expand)
   (add-to-list
    'display-buffer-alist
    '("\\*compilation\\*" display-buffer-reuse-window (reusable-frames . t)))
