@@ -32,7 +32,7 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(yaml
+   '(elfeed
      haskell
      dap
      ipython-notebook
@@ -73,6 +73,8 @@ This function should only modify configuration layer settings."
              python-formatter 'black)
      (org :variables
           org-highlight-latex-and-related '(native))
+     (elfeed :variables rmh-elfeed-org-files (list "~/.emacs.d/private/elfeed.org"))
+     (shell :variables shell-default-shell 'vterm)
      )
 
 
