@@ -32,7 +32,8 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(elfeed
+   '(html
+     elfeed
      haskell
      dap
      ipython-notebook
