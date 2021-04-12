@@ -351,23 +351,39 @@ bind C-s send-prefix
 
 bind -r C-p previous-window
 bind -r C-n next-window
+# -- tpm -----------------------------------------------------------------------
 
-# bind -r C-h send-keys C-h
-# bind -r C-j send-keys C-j
-# bind -r C-k send-keys C-k
-# bind -r C-l send-keys C-l
+# while I don't use tpm myself, many people requested official support so here
+# is a seamless integration that automatically installs plugins in parallel
 
-# # Smart pane switching with awareness of Vim splits.
-# # See: https://github.com/christoomey/vim-tmux-navigator
-# is_vim="ps -o state= -o comm= -t '#{pane_tty}' \
-#     | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|n?vim?x?)(diff)?$'"
-# bind-key -n C-h if-shell "$is_vim" "send-keys C-h"  "select-pane -L"
-# bind-key -n C-j if-shell "$is_vim" "send-keys C-j"  "select-pane -D"
-# bind-key -n C-k if-shell "$is_vim" "send-keys C-k"  "select-pane -U"
-# bind-key -n C-l if-shell "$is_vim" "send-keys C-l"  "select-pane -R"
-# # bind-key -n C-\ if-shell "$is_vim" "send-keys C-\\" "select-pane -l"
+# whenever a plugin introduces a variable to be used in 'status-left' or
+# 'status-right', you can use it in 'tmux_conf_theme_status_left' and
+# 'tmux_conf_theme_status_right' variables.
+
+# by default, launching tmux will update tpm and all plugins
+#   - true (default)
+#   - false
+tmux_conf_update_plugins_on_launch=true
+
+# by default, reloading the configuration will update tpm and all plugins
+#   - true (default)
+#   - false
+tmux_conf_update_plugins_on_reload=true
+
+# /!\ do not add set -g @plugin 'tmux-plugins/tpm'
+# /!\ do not add run '~/.tmux/plugins/tpm/tpm'
+
+# to enable a plugin, use the 'set -g @plugin' syntax:
+# visit https://github.com/tmux-plugins for available plugins
+#set -g @plugin 'tmux-plugins/tmux-copycat'
+#set -g @plugin 'tmux-plugins/tmux-cpu'
+#set -g @plugin 'tmux-plugins/tmux-resurrect'
+#set -g @plugin 'tmux-plugins/tmux-continuum'
+#set -g @continuum-restore 'on'
+
 
 # -- custom variables ----------------------------------------------------------
+
 # to define a custom #{foo} variable, define a POSIX shell function between the
 # '# EOF' and the '# "$@"' lines. Please note that the opening brace { character
 # must be on the same line as the function name otherwise the parse won't detect
@@ -379,13 +395,15 @@ bind -r C-n next-window
 # # /!\ do not remove the following line
 # EOF
 #
+# # /!\ do not "uncomment" the functions: the leading "# " characters are needed
+#
 # weather() {
 #   curl -m 1 wttr.in?format=3 2>/dev/null
 #   sleep 900 # sleep for 15 minutes, throttle network requests whatever the value of status-interval
 # }
 #
 # online() {
-#   ping -t 1 -c 1 1.1.1.1 >/dev/null 2>&1 && printf '✔' || printf '✘'
+#   ping -c 1 1.1.1.1 >/dev/null 2>&1 && printf '✔' || printf '✘'
 # }
 #
 # "$@"
