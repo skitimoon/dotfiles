@@ -32,7 +32,8 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(html
+   '(rust
+     html
      elfeed
      haskell
      dap
@@ -42,6 +43,7 @@ This function should only modify configuration layer settings."
      python
      latex
      bibtex
+     shell-scripts
      pdf
      ranger
      ;; ----------------------------------------------------------------
