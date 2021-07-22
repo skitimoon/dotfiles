@@ -28,6 +28,7 @@ export WORDCHARS="${WORDCHARS/\/}|"
 export EDITOR=nvim
 export FZF_BASE="$HOME/miniconda3/share/fzf"
 export LESS="Fij.5JW"
+eval "$(pyenv init -)"
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
