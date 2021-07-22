@@ -34,7 +34,7 @@ This function should only modify configuration layer settings."
    dotspacemacs-configuration-layers
    '(rust
      html
-     elfeed
+     ;; elfeed
      haskell
      dap
      ipython-notebook
@@ -77,7 +77,7 @@ This function should only modify configuration layer settings."
      (org :variables
           org-highlight-latex-and-related '(native)
           org-enable-reveal-js-support t)
-     (elfeed :variables rmh-elfeed-org-files (list "~/.emacs.d/private/elfeed.org"))
+     ;; (elfeed :variables rmh-elfeed-org-files (list "~/.emacs.d/private/elfeed.org"))
      (shell :variables shell-default-shell 'vterm)
      (lsp :variables lsp-ui-doc-show-with-cursor nil)
      )
