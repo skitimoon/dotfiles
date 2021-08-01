@@ -430,7 +430,7 @@ It should only modify the values of Spacemacs settings."
    ;;   :size-limit-kb 1000)
    ;; When used in a plist, `visual' takes precedence over `relative'.
    ;; (default nil)
-   dotspacemacs-line-numbers '(:relative t
+   dotspacemacs-line-numbers '(:visual t
                                :disabled-for-modes pdf-view-mode
                                                    doc-view-mode)
 
@@ -579,6 +579,7 @@ before packages are loaded."
                 undo-tree-history-directory-alist `(("." . ,(concat spacemacs-cache-directory "undo"))))
   (unless (file-exists-p (concat spacemacs-cache-directory "undo"))
     (make-directory (concat spacemacs-cache-directory "undo")))
+  (setq-default helm-buffer-max-length 50)
   (setq-default evil-esc-delay 0.2)
   (define-key evil-normal-state-map (kbd "C-a") 'evil-numbers/inc-at-pt)
   (define-key evil-normal-state-map (kbd "-") 'evil-numbers/dec-at-pt)
