@@ -32,20 +32,21 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(rust
-     html
+   '(bibtex
+     csv
+     dap
      ;; elfeed
      haskell
-     dap
+     html
      ipython-notebook
      javascript
-     shell
-     python
      latex
-     bibtex
-     shell-scripts
      pdf
-     ranger
+     python
+     rust
+     shell
+     shell-scripts
+     yaml
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
