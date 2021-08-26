@@ -28,6 +28,15 @@ export WORDCHARS="${WORDCHARS/\/}|"
 export EDITOR=nvim
 export FZF_BASE="$HOME/miniconda3/share/fzf"
 export LESS="Fij.5JW"
+
+# NNN
+export NNN_BMS='d:~/Documents;D:~/Downloads'
+export NNN_PLUG='p:preview-tui'
+export ICONLOOKUP=1
+if [ -f /usr/share/nnn/quitcd/quitcd.bash_zsh ]; then
+    source /usr/share/nnn/quitcd/quitcd.bash_zsh
+fi
+
 eval "$(pyenv init -)"
 
 ### Added by Zinit's installer
