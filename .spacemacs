@@ -84,14 +84,15 @@ This function should only modify configuration layer settings."
              python-test-runner 'pytest
              python-formatter 'black)
      (org :variables
+          org-todo-dependencies-strategy 'naive-auto
+          org-projectile-file "TODOs.org"
           org-highlight-latex-and-related '(native)
           org-enable-reveal-js-support t)
      ;; (elfeed :variables rmh-elfeed-org-files (list "~/.emacs.d/private/elfeed.org"))
      (shell :variables shell-default-shell 'vterm)
      (lsp :variables
           lsp-ui-doc-show-with-cursor nil
-          lsp-ui-doc-show-with-mouse nil)
-     )
+          lsp-ui-doc-show-with-mouse nil))
 
 
    ;; List of additional packages that will be installed without being wrapped
