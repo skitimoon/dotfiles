@@ -35,11 +35,13 @@ This function should only modify configuration layer settings."
    '(bibtex
      csv
      dap
+     ;; dash
      ;; elfeed
      haskell
      html
      ipython-notebook
      javascript
+     languagetool
      latex
      pdf
      python
@@ -72,6 +74,12 @@ This function should only modify configuration layer settings."
                       auto-completion-enable-snippets-in-popup t
                       auto-completion-enable-help-tooltip t
                       auto-completion-enable-sort-by-usage t)
+     ;; (dash :variables
+     ;;       dash-docs-docset-newpath "~/.local/share/Zeal/Zeal/docsets")
+     (languagetool :variables
+                   langtool-default-language "en-GB"
+                   languagetool-show-error-on-jump t
+                   langtool-java-classpath "/usr/share/languagetool:/usr/share/java/languagetool/*")
      (python :variables
              python-test-runner 'pytest
              python-formatter 'black)
