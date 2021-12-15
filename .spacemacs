@@ -605,8 +605,7 @@ before packages are loaded."
   (add-to-list
    'display-buffer-alist
    '("pdf" display-buffer-reuse-window (reusable-frames . t)))
-  (setenv "WORKON_HOME" "~/miniconda3/envs")
-  (pyvenv-mode t)
+  ;; (setenv "WORKON_HOME" "~/miniconda3/envs")
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
