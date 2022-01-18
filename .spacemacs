@@ -36,7 +36,6 @@ This function should only modify configuration layer settings."
      csv
      dap
      ;; dash
-     ;; elfeed
      haskell
      html
      ipython-notebook
@@ -88,7 +87,6 @@ This function should only modify configuration layer settings."
           org-projectile-file "TODOs.org"
           org-highlight-latex-and-related '(native)
           org-enable-reveal-js-support t)
-     ;; (elfeed :variables rmh-elfeed-org-files (list "~/.emacs.d/private/elfeed.org"))
      (shell :variables shell-default-shell 'vterm)
      (lsp :variables
           lsp-ui-doc-show-with-cursor nil
