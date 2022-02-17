@@ -80,6 +80,7 @@ This function should only modify configuration layer settings."
                    languagetool-show-error-on-jump t
                    langtool-java-classpath "/usr/share/languagetool:/usr/share/java/languagetool/*")
      (python :variables
+             python-poetry-activate t
              python-test-runner 'pytest
              python-formatter 'black)
      (org :variables
@@ -606,8 +607,8 @@ before packages are loaded."
   (add-to-list
    'display-buffer-alist
    '("pdf" display-buffer-reuse-window (reusable-frames . t)))
-  ;; (setenv "WORKON_HOME" "~/miniconda3/envs")
-  )
+)
+
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
