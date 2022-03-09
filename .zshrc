@@ -50,10 +50,6 @@ zinit load trapd00r/LS_COLORS
 zinit ice from"gh-r" as"program" atload'!eval $(starship init zsh)'
 zinit light starship/starship
 
-# # Load the pure theme, with zsh-async library that's bundled with it.
-# zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
-# zinit light sindresorhus/pure
-
 # # The following lines were added by compinstall
 # zstyle :compinstall filename '$HOME/.zshrc'
 
