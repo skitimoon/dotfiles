@@ -43,12 +43,13 @@ zinit wait lucid for \
 zinit wait lucid for \
     OMZL::completion.zsh \
     OMZL::directories.zsh \
-    OMZL::history.zsh \
     OMZP::colored-man-pages \
     OMZP::common-aliases \
     OMZP::fzf \
     OMZP::git \
     rupa/z
+
+zinit snippet OMZL::history.zsh
 
 zinit ice wait lucid atclone"dircolors -b LS_COLORS > clrs.zsh" \
       atpull'%atclone' pick"clrs.zsh" nocompile'!' \
