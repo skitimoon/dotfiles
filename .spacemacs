@@ -610,10 +610,6 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
-  (setq-default undo-tree-auto-save-history t
-                undo-tree-history-directory-alist `(("." . ,(concat spacemacs-cache-directory "undo"))))
-  (unless (file-exists-p (concat spacemacs-cache-directory "undo"))
-    (make-directory (concat spacemacs-cache-directory "undo")))
   (setq-default helm-buffer-max-length 50)
   (setq-default evil-esc-delay 0.2)
   (define-key evil-normal-state-map (kbd "C-a") 'evil-numbers/inc-at-pt)
