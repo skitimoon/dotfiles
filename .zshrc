@@ -44,10 +44,7 @@ zinit wait lucid for \
     OMZL::completion.zsh \
     OMZL::directories.zsh \
     OMZP::colored-man-pages \
-    OMZP::common-aliases \
-    OMZP::fzf \
-    OMZP::git \
-    rupa/z
+    atload"alias la='ls -laFh'" OMZP::common-aliases \
 
 zinit snippet OMZL::history.zsh
 
