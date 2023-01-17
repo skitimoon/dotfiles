@@ -617,6 +617,8 @@ Put your configuration code here, except for variables that should be set
 before packages are loaded."
   (setq-default helm-buffer-max-length 50)
   (setq-default evil-esc-delay 0.2)
+  (define-key evil-normal-state-map (kbd "[ f") 'evil-unimpaired/previous-file)
+  (define-key evil-normal-state-map (kbd "] f") 'evil-unimpaired/next-file)
   (define-key evil-normal-state-map (kbd "C-a") 'evil-numbers/inc-at-pt)
   (define-key evil-normal-state-map (kbd "-") 'evil-numbers/dec-at-pt)
   (define-key evil-normal-state-map (kbd "\\") 'evil-repeat-find-char-reverse)
