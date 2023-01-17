@@ -5,7 +5,6 @@ export LESS="Fij.5JW"
 
 export WORDCHARS="${WORDCHARS/\/}|"
 export EDITOR=nvim
-export FZF_BASE="$HOME/miniconda3/share/fzf"
 
 # NNN
 export NNN_BMS='d:~/Documents;D:~/Downloads;t:/tmp'

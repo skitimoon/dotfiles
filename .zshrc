@@ -41,15 +41,13 @@ zinit wait lucid for \
 zinit wait lucid for \
     OMZL::completion.zsh \
     OMZL::directories.zsh \
+    OMZL::functions.zsh \
     OMZP::colored-man-pages \
+    OMZP::poetry \
+    OMZP::fzf \
     atload"alias la='ls -laFh'" OMZP::common-aliases \
 
 zinit snippet OMZL::history.zsh
-
-zinit ice wait lucid atclone"dircolors -b LS_COLORS > clrs.zsh" \
-      atpull'%atclone' pick"clrs.zsh" nocompile'!' \
-      atload'zstyle ":completion:*" list-colors “${(s.:.)LS_COLORS}”'
-zinit load trapd00r/LS_COLORS
 
 zinit ice from"gh-r" as"program" atload'!eval $(starship init zsh)'
 zinit light starship/starship
