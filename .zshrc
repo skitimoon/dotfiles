@@ -35,8 +35,6 @@ zinit wait lucid for \
         zdharma-continuum/fast-syntax-highlighting \
     atload"zicompinit; zicdreplay" blockf \
         zsh-users/zsh-completions \
-    blockf \
-        esc/conda-zsh-completion \
     atload"!_zsh_autosuggest_start" \
         zsh-users/zsh-autosuggestions
 
