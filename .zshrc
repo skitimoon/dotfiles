@@ -4,7 +4,6 @@ bindkey -e
 # End of lines configured by zsh-newuser-install
 
 alias ls=exa
-alias la="exa -lFh"
 
 eval "$(pyenv init -)"
 
