@@ -87,7 +87,8 @@ This function should only modify configuration layer settings."
           org-todo-dependencies-strategy 'naive-auto
           org-projectile-file "TODOs.org"
           org-highlight-latex-and-related '(native)
-          org-enable-reveal-js-support t)
+          org-enable-reveal-js-support t
+          org-enable-org-journal-support t)
      (shell :variables shell-default-shell 'vterm)
      (lsp :variables
           lsp-ui-doc-show-with-cursor nil
