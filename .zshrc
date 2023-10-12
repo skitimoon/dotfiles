@@ -3,7 +3,7 @@ setopt appendhistory autocd extendedglob nomatch notify
 bindkey -e
 # End of lines configured by zsh-newuser-install
 
-alias ls=exa
+alias ls=eza
 
 eval "$(pyenv init -)"
 
