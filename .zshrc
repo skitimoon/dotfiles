@@ -44,7 +44,7 @@ zinit wait lucid for \
     OMZP::colored-man-pages \
     OMZP::poetry \
     OMZP::fzf \
-    atload"alias la='ls -laFh'" OMZP::common-aliases \
+    atload"alias la='ls -lahF'" OMZP::common-aliases \
 
 zinit snippet OMZL::history.zsh
 
