@@ -48,7 +48,7 @@ zinit wait lucid for \
 
 zinit snippet OMZL::history.zsh
 
-zinit ice from"gh-r" as"program" atload'!eval $(starship init zsh)'
+zinit ice from"gh-r" as"program" atload'!eval "$(starship init zsh)"'
 zinit light starship/starship
 
 # # The following lines were added by compinstall
